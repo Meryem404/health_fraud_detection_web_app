@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FrauDetection App</title>
+	<meta name="description" content="This is a web application made exclusively for Health Insurance Fraud Detection" />
+	<meta name="keywords" content="html template, css, free, one page, gym, fitness, web design" />
+	<meta name="author" content="Luka Cvetinovic for Codrops" />
+	<!-- Favicons (created with http://realfavicongenerator.net/)-->
+	<link rel="apple-touch-icon" sizes="57x57" src="{{url_for('static', filename='img/apple-touch-icon-57x57.png')}}">
+	<link rel="apple-touch-icon" sizes="60x60" src="{{url_for('static', filename='img/apple-touch-icon-60x60.png')}}">
+	<link rel="icon" type="image/png" src="{{url_for('static', filename='img/favicon-32x32.png')}}">
+	<link rel="icon" type="image/png" src="{{url_for('static', filename='img/favicon-16x16.png')}}">
+	<link rel="manifest" src="{{url_for('static', filename='img/manifest.json')}}">
+	<link rel="shortcut icon" src="{{url_for('static', filename='img/favicon.ico')}}">
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<meta name="msapplication-TileColor" content="#00a8ff">
+	<meta href="{{url_for('static', filename='img/browserconfig.xml')}}" name="msapplication-config">
+	<meta name="theme-color" content="#ffffff">
+	<!-- Normalize -->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/normalize.css')}}">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css')}}">
+	<!-- Owl -->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/owl.css')}}">
+	<!-- Animate.css -->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/animate.css')}}">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/font-awesome.min.css')}}">
+	<!-- Elegant Icons -->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/et-icons.css')}}">
+	<!-- Main style -->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/cardio.css')}}">
+</head>
+
+<body>
+	<div class="preloader">
+		<img src="{{url_for('static', filename='img/loader.gif')}}" alt="Preloader image">
+	</div>
+	<nav class="navbar">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><img src="{{url_for('static', filename='img/logo.png')}}" data-active-url="{{url_for('static', filename='img/logo-active.png')}}" alt=""></a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right main-nav">
+					<li><a href="#intro">Welcome</a></li>
+					<li><a href="#services">Detect the Fraud</a></li>
+					<li><a href="#pricing">About Us</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Sign Up</a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	<header id="intro">
+		<div class="container">
+			<div class="table">
+				<div class="header-text">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h3 class="light white">Prediction Result</h3>
+							<h1 class="white typed">{{pred}}</h1>
+							<span class="typed-cursor">|</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 text-center-mobile">
+					<h3 class="white">Happy Detecting!</h3>
+					<h5 class="light regular light-white">Hope our model got you the best results</h5>
+					<a href="#" class="btn btn-blue ripple trial-button">Start Detecting Now!</a>
+				</div>
+
+			</div>
+			<div class="row bottom-footer text-center-mobile">
+				<div class="col-sm-8">
+					<p>&copy; 2021 All Rights Reserved</p>
+				</div>
+
+			</div>
+		</div>
+	</footer>
+	<!-- Holder for mobile navigation -->
+	<div class="mobile-nav">
+		<ul>
+		</ul>
+		<a href="#intro" class="close-link"><i class="arrow_up"></i></a>
+	</div>
+	<!-- Scripts -->
+	<script src="{{url_for('static', filename='js/jquery-1.11.1.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/wow.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/typewriter.js')}}"></script>
+	<script src="{{url_for('static', filename='js/jquery.onepagenav.js')}}"></script>
+	<script src="{{url_for('static', filename='js/main.js')}}"></script>
+</body>
+</html>

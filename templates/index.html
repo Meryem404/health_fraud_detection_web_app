@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FrauDetection App</title>
+	<meta name="description" content="This is a web application made exclusively for Health Insurance Fraud Detection" />
+	<meta name="keywords" content="html template, css, free, one page, gym, fitness, web design" />
+	<meta name="author" content="Luka Cvetinovic for Codrops" />
+	<!-- Favicons (created with http://realfavicongenerator.net/)-->
+	<link rel="apple-touch-icon" sizes="57x57" src="{{url_for('static', filename='img/apple-touch-icon-57x57.png')}}">
+	<link rel="apple-touch-icon" sizes="60x60" src="{{url_for('static', filename='img/apple-touch-icon-60x60.png')}}">
+	<link rel="icon" type="image/png" src="{{url_for('static', filename='img/favicon-32x32.png')}}">
+	<link rel="icon" type="image/png" src="{{url_for('static', filename='img/favicon-16x16.png')}}">
+	<link rel="manifest" src="{{url_for('static', filename='img/manifest.json')}}">
+	<link rel="shortcut icon" src="{{url_for('static', filename='img/favicon.ico')}}">
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<meta name="msapplication-TileColor" content="#00a8ff">
+	<meta href="{{url_for('static', filename='img/browserconfig.xml')}}" name="msapplication-config">
+	<meta name="theme-color" content="#ffffff">
+	<!-- Normalize -->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/normalize.css')}}">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css')}}">
+	<!-- Owl -->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/owl.css')}}">
+	<!-- Animate.css -->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/animate.css')}}">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/font-awesome.min.css')}}">
+	<!-- Elegant Icons -->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/et-icons.css')}}">
+	<!-- Main style -->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/cardio.css')}}">
+</head>
+
+<body>
+	<div class="preloader">
+		<img src="{{url_for('static', filename='img/loader.gif')}}" alt="Preloader image">
+	</div>
+	<nav class="navbar">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><img src="{{url_for('static', filename='img/logo.png')}}" data-active-url="{{url_for('static', filename='img/logo-active.png')}}" alt=""></a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right main-nav">
+					<li><a href="#intro">Welcome</a></li>
+					<li><a href="#services">Detect the Fraud</a></li>
+					<li><a href="#pricing">About Us</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Sign Up</a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	<header id="intro">
+		<div class="container">
+			<div class="table">
+				<div class="header-text">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h3 class="light white">Fraud detection Application</h3>
+							<h1 class="white typed">This app is made to detect fraudulent insurance claimers</h1>
+							<span class="typed-cursor">|</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section id="services" class="section section-padded">
+		<div class="container">
+			<div class="row text-center title">
+				<h2>Start Detecting Now</h2>
+				<h4 class="light muted">Achieve the best results with our wide variety of training options!</h4>
+			</div>
+					<!-- Form to enter new data for predictions  -->
+			 <form action="{{ url_for('predict')}}" method="post">
+                 <input type="text" name="BeneID" placeholder="beneficiary ID" required="required" /><br>
+                 <input type="text" name="ClaimID" placeholder="claim ID" required="required" /><br>
+			    <input type="text" name="InscClaimAmtReimbursed" placeholder="InscClaimAmtReimbursed" required="required" /><br>
+                 <input type="text" name="DeductibleAmtPaid" placeholder="DeductibleAmtPaid" required="required" /><br>
+                 <input type="text" name="RenalDiseaseIndicator" placeholder="RenalDiseaseIndicator" required="required" /><br>
+                 <input type="text" name="ChronicCond_Alzheimer"  placeholder="ChronicCond_Alzheimer" required="required" /><br>
+                 <input type="text" name="ChronicCond_Heartfailure" placeholder="ChronicCond_Heartfailure" required="required" /><br>
+                 <input type="text" name="ChronicCond_KidneyDisease" placeholder="ChronicCond_KidneyDisease" required="required" /><br>
+				<input type="text" name="ChronicCond_Cancer" placeholder="ChronicCond_Cancer" required="required" /><br>
+				<input type="text" name="ChronicCond_ObstrPulmonary" placeholder="ChronicCond_ObstrPulmonary" required="required" /><br>
+				<input type="text" name="ChronicCond_Depression" placeholder="ChronicCond_Depression" required="required" /><br>
+				<input type="text" name="ChronicCond_Diabetes" placeholder="ChronicCond_Diabetes" required="required" /><br>
+				<input type="text" name="ChronicCond_IschemicHeart" placeholder="ChronicCond_IschemicHeart" required="required" /><br>
+				<input type="text" name="ChronicCond_Osteoporasis"  placeholder="ChronicCond_Osteoporasis" required="required" /><br>
+				<input type="text" name="ChronicCond_rheumatoidarthritis" placeholder="ChronicCond_rheumatoidarthritis" required="required" /><br>
+				<input type="text" name="ChronicCond_stroke" placeholder="ChronicCond_stroke" required="required" /><br>
+                 <input type="text" name="WhetherDead" placeholder="WhetherDead" required="required" /><br>
+                 <input type="text" name="NumPhysicians" placeholder="NumPhysicians" required="required" /><br>
+                 <input type="text" name="NumProc" placeholder="NumProc" required="required" /><br>
+                 <input type="text" name="NumUniqueClaims" placeholder="NumUniqueClaims" required="required" /><br>
+                 <input type="text" name="ExtraClm" placeholder="ExtraClm" required="required" /><br>
+                 <input type="text" name="AdmissionDays" placeholder="AdmissionDays" required="required" /><br>
+				<input type="text" name="ClaimDays"  placeholder="ClaimDays" required="required" /><br>
+				<input type="text" name="Hospt" placeholder="Hospt" required="required" /><br>
+                 <input type="text" name="NoOfMonths_PartACov" placeholder="NoOfMonths_PartACov" required="required" /><br>
+                 <input type="text" name="NoOfMonths_PartBCov" placeholder="NoOfMonths_PartBCov" required="required" /><br>
+                 <input type="text" name="IPAnnualReimbursementAmt" placeholder="IPAnnualReimbursementAmt" required="required" /><br>
+                 <input type="text" name="IPAnnualDeductibleAmt" placeholder="IPAnnualDeductibleAmt" required="required" /><br>
+                 <input type="text" name="OPAnnualReimbursementAmt"  placeholder="OPAnnualReimbursementAmt" required="required" /><br>
+                 <input type="text" name="OPAnnualDeductibleAmt" placeholder="OPAnnualDeductibleAmt" required="required" /><br>
+                 <input type="text" name="Age" placeholder="Age" required="required" /><br>
+
+
+
+				<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+			</form>
+		</div>
+		 {{pred}}
+		<div class="cut cut-bottom"></div>
+
+	<section id="pricing" class="section">
+		<div class="container">
+			<div class="row title text-center">
+				<h2 class="margin-top white">About Us</h2>
+				<h4 class="light white">Health insurance fraud detection is an important and challenging task. Traditionally, insurance
+companies use human inspections and heuristic rules to detect fraud. As the size of databases increases, the
+traditional approaches may miss a great portion of fraud for two main reasons. First, it is impossible to
+detect all health care fraud by manual inspection over large databases. Second, new types of health care
+fraud emerge constantly. That is why This web application is a tool to predict whether a insurance claimer is fraudulent or not with the most performant machine learning models</h4>
+			</div>
+
+		</div>
+	</section>
+	<section class="section section-padded blue-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="owl-twitter owl-carousel">
+						<div class="item text-center">
+							<i class="icon fa fa-twitter"></i>
+							<h4 class="white light">Application for Fraud Detection</h4>
+							<h4 class="light-white light">#health #training #insurance</h4>
+						</div>
+						<div class="item text-center">
+							<i class="icon fa fa-twitter"></i>
+							<h4 class="white light">Application for Fraud Detection</h4>
+							<h4 class="light-white light">#machineLearning #training #fraud</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content modal-popup">
+				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+				<h3 class="white">Sign Up</h3>
+				<form action="" class="popup-form">
+					<input type="text" class="form-control form-white" placeholder="Full Name">
+					<input type="text" class="form-control form-white" placeholder="Email Address">
+					<div class="checkbox-holder text-left">
+						<div class="checkbox">
+							<input type="checkbox" value="None" id="squaredOne" name="check" />
+							<label for="squaredOne"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-submit">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 text-center-mobile">
+					<h3 class="white">Happy Detecting!</h3>
+					<h5 class="light regular light-white">Hope our model got you the best results</h5>
+					<a href="#" class="btn btn-blue ripple trial-button">Start Detecting Now!</a>
+				</div>
+
+			</div>
+			<div class="row bottom-footer text-center-mobile">
+				<div class="col-sm-8">
+					<p>&copy; 2021 All Rights Reserved</p>
+				</div>
+
+			</div>
+		</div>
+	</footer>
+	<!-- Holder for mobile navigation -->
+	<div class="mobile-nav">
+		<ul>
+		</ul>
+		<a href="#intro" class="close-link"><i class="arrow_up"></i></a>
+	</div>
+	<!-- Scripts -->
+	<script src="{{url_for('static', filename='js/jquery-1.11.1.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/wow.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/typewriter.js')}}"></script>
+	<script src="{{url_for('static', filename='js/jquery.onepagenav.js')}}"></script>
+	<script src="{{url_for('static', filename='js/main.js')}}"></script>
+</body>
+</html>
